@@ -1,0 +1,49 @@
+
+<mydara></mydara>
+<p>Start editing to see some magic happen :)</p>
+<button (click)="save()">save</button>
+<div [formGroup]="orderForm">
+  <div
+    formArrayName="questionsArray"
+    *ngFor="let item of orderForm.get('questionsArray').controls; let i = index"
+  >
+    <div [formGroupName]="i">
+      <div style="width:100%">
+        <input
+          style="height:30px; padding:10px; margin:10px;width:80%"
+          formControlName="Questions"
+          placeholder="Question"
+        />
+      </div>
+      <div>
+        <input
+          style="height:30px; padding:10px; margin:10px"
+          formControlName="option1"
+          placeholder="Option1"
+        />
+
+        <input
+          style="height:30px; padding:10px; margin:10px"
+          formControlName="option2"
+          placeholder="Option2"
+        />
+      </div>
+      <div>
+        <input
+          style="height:30px; padding:10px; margin:10px"
+          formControlName="option3"
+          placeholder="Option3"
+        />
+
+        <input
+          style="height:30px; padding:10px; margin:10px"
+          formControlName="option4"
+          placeholder="Option4"
+        />
+      </div>
+    </div>
+
+  
+  </div>
+</div>
+<button (click)="addItem()">Add</button>
